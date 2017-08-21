@@ -1,0 +1,4 @@
+<h1>주변의 가게 소개 </h1>
+<% @posts.each do |post| %>
+<h2><a href="/posts/show/<%= post.id %>"><%= post.id %> : <%= post.title %></h2></a><br>
+<% end %>
