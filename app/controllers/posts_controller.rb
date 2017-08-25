@@ -1,29 +1,23 @@
 class PostsController < ApplicationController
 
-def new
-end
-
 def create
   @post = Post.new
   @post.title = params[:post_title]
   @post.content = params[:post_content]
+  @post.shop_id = params[:shop_id]
   @post.save
 
-  redirect_to '/posts/index'
+  redirect_to "/shops/show/#{params[:shop_id]}"
 end
 
-def index
-  @posts = Post.all
-end
-
-def view
-  @post = Post.find(params[:post_id])
-end
+  def show
+    @post = Post.find(params[:post_id])
+  end
 
 def destroy
   @post = Post.find(params[:post_id])
   @post.destroy
-  redirect_to '/posts/index'
+  redirect_to "/"
 end
 
 def edit
@@ -35,7 +29,7 @@ def update
   @post.title = params[:post_title]
   @post.content = params[:post_content]
   @post.save
-  redirect_to "/posts/show/#{@post.id}"
+  redirect_to "/"
 end
 
 

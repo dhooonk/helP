@@ -1,0 +1,21 @@
+<h1> <%= @shop.id %>번 가게 입니다. </h1>
+<h2> 가게 명 : <%= @shop.name %></h2>
+<h2> 주소 : <%= @shop.address %></h2>
+<a href ="/">메인으로가기</a>
+<a href ="/shops/edit/<%= @shop.id %>">수정하기</a>
+<a href ="/shops/destroy/<%= @shop.id %>" data-confirm="가게를 삭제하시겠습니까?" data-method="post">삭제하기</a>
+<br>
+<br>
+공지사항을 작성합니다.
+<form action="/shops/show/<%= @shop.id %>/posts/create" method="post">
+<input type="text" name="post_title">
+
+<input type="text" name="post_content">
+
+<input type="submit">
+</form>
+
+<h4><%= @shop.name %>의 공지사항입니다.</h4>
+<% @posts.each do |post| %>
+<h><a href="/shops/show/:shop_id/posts/show/<%= post.id %>"><%= post.id %> : <%= post.title %></h4></a><br>
+<% end %>

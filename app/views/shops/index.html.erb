@@ -1,8 +1,8 @@
-<!-- <section id="login" class="section">
+<section id="login" class="section">
   <div class="container">
     로그인화면넣을곳
   </div>
-</section> -->
+</section>
 <section id="service" class="section">
   <div class="container">
     <div class="row">
@@ -148,14 +148,20 @@
       </div>
       <div class="col-xs-12 col-md-4">
         <h4>내 주변 가게 좌석 상황</h4>
-        <% @posts.each do |post| %>
-        <h><a href="/posts/show/<%= post.id %>"><%= post.id %> : <%= post.title %></h4></a><br>
+        <% @shops.each do |shop| %>
+        <h><a href="/shops/show/<%= shop.id %>"><%= shop.id %> : <%= shop.name %></h4></a><br>
         <% end %>
       </div>
     </div>
   </div>
 </section>
-
+<section id="login" class="section">
+  <div class="container">
+    <div class="col-xs-12 col-md-push-3 col-md-6">
+      <a class="btn btn-primary btn-lg btn-light btn-block" href="/shops/new">새로운가게 등록하기</a>
+    </div>
+  </div>
+</section>
 <section id="contact" class="section">
   <div class="container">
     <div class="col-xs-push-1 col-xs-10 text-center">

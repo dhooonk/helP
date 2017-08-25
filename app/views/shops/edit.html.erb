@@ -1,0 +1,6 @@
+<h1>사장님! 수정해주세요!</h1>
+<form action="/shops/update/<%= @shop.id %>" method="post">
+<input type="text" name="shop_name" value="<%= @shop.name%>">
+<input type="text" name="shop_address" value="<%= @shop.address%>">
+<input type="submit">
+</form>

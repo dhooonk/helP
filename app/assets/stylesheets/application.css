@@ -13,3 +13,39 @@
  *= require_tree .
  *= require_self
  */
+
+
+ @import url(https://cdn.rawgit.com/hiun/NanumSquare/master/nanumsquare.css);
+
+ * {
+font-family: 'Nanum Square';
+ }
+
+ .section{
+   min-height:100%;
+   padding:50px 0px 50px 0px;
+  }
+  #login{
+    background-image: url("assets/background.jpg");
+    height: 100%;
+  }
+  #service{
+    background-color: #f8f9fa;
+  }
+  #contact{
+  }
+  #footer{
+    background-color:#f1c40f;
+  }
+  /*.service-section{
+  min-height:100%;
+  padding:50px 0px 50px 0px;
+ }
+ .message-section{
+   min-height:100%;
+   padding:50px 0px 50px 0px;
+  }
+ .footer-section{
+   min-height:100%;
+   padding:50px 0px 50px 0px;
+  }*/

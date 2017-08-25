@@ -10,9 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170821182817) do
+ActiveRecord::Schema.define(version: 20170824063339) do
 
   create_table "posts", force: :cascade do |t|
+    t.integer "shop_id"
     t.string "title"
     t.text "content"
     t.datetime "created_at", null: false
@@ -28,6 +29,14 @@ ActiveRecord::Schema.define(version: 20170821182817) do
     t.index ["name", "resource_type", "resource_id"], name: "index_roles_on_name_and_resource_type_and_resource_id"
     t.index ["name"], name: "index_roles_on_name"
     t.index ["resource_type", "resource_id"], name: "index_roles_on_resource_type_and_resource_id"
+  end
+
+  create_table "shops", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.integer "phonenumber"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
